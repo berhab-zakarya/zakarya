@@ -1,0 +1,24 @@
+/* Design tokens: the single source of truth for colour, spacing, type and layering. */
+:root {
+  --bg: #efece5;      /* warm paper */
+  --surface: #f9f7f2;
+  --ink: #15130f;
+  --accent: #c8321a;       /* the only accent: vermilion */
+  --accent-press: #a82812;
+  --muted: #6b665c;
+  --line: #dcd7cb;
+
+  --font-sans: "Outfit Variable", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --m: clamp(16px, 3vw, 48px);        /* page margin */
+  --max: 1760px;                      /* content max width */
+  --header-h: 64px;
+  --radius: 14px;
+
+  /* Layering scale. Add new layers here, never use raw z-index numbers in components. */
+  --z-canvas: 0;
+  --z-content: 1;
+  --z-lower: 2;
+  --z-header: 50;
+  --z-menu: 60;
+}
+@media (max-width: 699px) { :root { --header-h: 56px; } }

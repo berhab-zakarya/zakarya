@@ -1,0 +1,26 @@
+.site-header { position: fixed; z-index: var(--z-header); top: 0; left: 0; right: 0; padding: var(--m) var(--m) 0; pointer-events: none; }
+.site-header__row { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+.site-header__row > * { pointer-events: auto; }
+.site-header__bar { position: relative; flex: 0 1 min(790px, 60%); min-width: 0; height: var(--header-h); display: flex; align-items: center; justify-content: space-between; padding: 0 20px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
+.site-header__brand { display: inline-flex; align-items: center; min-height: 44px; font-size: 30px; font-weight: 500; letter-spacing: -.04em; }
+.site-header__brand i { font-style: normal; color: var(--accent); }
+.site-header__toggle { display: flex; align-items: center; gap: 14px; min-height: 44px; padding: 0 4px; background: none; border: 0; font: inherit; font-size: 17px; color: #2a2620; cursor: pointer; }
+.site-header__lines { width: 36px; height: 7px; border-top: 1.5px solid #2a2620; border-bottom: 1.5px solid #2a2620; }
+.site-header__menu { position: absolute; z-index: var(--z-menu); top: calc(100% + 8px); left: 0; right: 0; display: none; flex-direction: column; padding: 8px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
+.site-header__menu[data-open="true"] { display: flex; }
+.site-header__menu a { padding: 14px 16px; border-radius: 8px; font-size: 18px; }
+.site-header__menu a { display: flex; align-items: center; justify-content: space-between; transition: background .2s; }
+.site-header__menu a:hover { background: var(--bg); }
+.site-header__menu a[aria-current="true"]::after { content: ""; width: 16px; height: 2px; background: var(--accent); }
+.site-header__menu[data-open="true"] { animation: menu-in .25s cubic-bezier(.2, .8, .2, 1); }
+@keyframes menu-in { from { opacity: 0; transform: translateY(-6px); } }
+@media (prefers-reduced-motion: reduce) { .site-header__menu[data-open="true"] { animation: none; } }
+
+@media (max-width: 1099px) { .site-header__bar { flex: 1 1 auto; } }
+@media (max-width: 699px) {
+  .site-header__cta { display: none; }
+  .site-header__brand { font-size: 26px; }
+}
+
+/* While the dark contact section sits under the header, the header CTA adopts that section's accent. */
+:root[data-surface="contact"] .site-header { --accent: #ff7b55; --accent-press: #f0613a; --btn-ink: #1d0a04; }

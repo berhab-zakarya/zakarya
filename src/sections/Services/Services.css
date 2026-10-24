@@ -1,0 +1,19 @@
+.services__list { list-style: none; margin: clamp(32px, 4vw, 56px) 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(20px, 3vw, 48px); }
+.services__list li { position: relative; padding-top: 20px; border-top: 1.5px solid var(--line); }
+.services__list li::before { content: ""; position: absolute; left: 0; right: 0; top: -1.5px; height: 1.5px; background: var(--ink); transform-origin: left; transition: transform .5s cubic-bezier(.2, .8, .2, 1), background .25s; }
+.services__list li:hover::before { background: var(--accent); }
+.services__list li:hover .services__num { color: var(--accent); }
+.services__num { transition: color .25s; }
+.stack__col li { transition: border-color .2s, background .2s, transform .25s cubic-bezier(.2, .8, .2, 1); }
+.stack__col li:hover { border-color: #fff; background: #1f1c17; }
+.services__num { font-size: 14px; color: var(--muted); }
+.services__list h3 { margin-top: 28px; font-size: clamp(1.4rem, 2vw, 2rem); font-weight: 500; line-height: 1.05; letter-spacing: -.04em; }
+.services__list p { margin-top: 12px; max-width: 38ch; font-size: 16px; line-height: 1.45; color: #4d4940; }
+
+.stack { margin-top: clamp(40px, 5vw, 80px); padding: clamp(22px, 2.6vw, 36px); background: var(--ink); color: #fff; border-radius: 16px; }
+.stack__title { font-size: 15px; font-weight: 400; letter-spacing: .1em; text-transform: uppercase; color: #a29c8e; }
+.stack__cols { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(20px, 3vw, 48px); margin-top: 24px; }
+.stack__col h4 { margin: 0 0 14px; font-size: clamp(1.3rem, 1.8vw, 1.8rem); font-weight: 500; letter-spacing: -.04em; }
+.stack__col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.stack__col li { padding: 8px 14px; border: 1px solid #3d3830; border-radius: 8px; font-size: 16px; color: #ebe6da; }
+@media (max-width: 899px) { .services__list, .stack__cols { grid-template-columns: minmax(0, 1fr); } .services__list li { padding-bottom: 8px; } .services__list h3 { margin-top: 14px; } }
