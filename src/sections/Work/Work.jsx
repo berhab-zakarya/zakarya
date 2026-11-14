@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import Section from "../../components/layout/Section.jsx";
 import ArrowIcon from "../../components/ui/ArrowIcon.jsx";
+import ProjectGallery from "../../components/ui/ProjectGallery.jsx";
 import "./Work.css";
 
 const INITIAL = 5; // 2 wide cards + one row of 3 keeps the grid full on first paint
@@ -9,6 +10,7 @@ const STEP = 6; // two full rows per batch
 export default function Work({ content: c }) {
   const items = c.items;
   const [count, setCount] = useState(() => Math.min(INITIAL, items.length));
+  const [gallery, setGallery] = useState(null);
   const listRef = useRef(null);
   const sentinelRef = useRef(null);
   const hasMore = count < items.length;
@@ -60,6 +62,32 @@ export default function Work({ content: c }) {
             {p.logo && <img className="work__logo" src={p.logo} alt="" height="56" loading="lazy" onError={(e) => { e.currentTarget.hidden = true; }} />}
             <h3 className="work__name">{p.name}</h3>
             <p className="work__text">{p.text}</p>
+            {p.techs?.length > 0 && (
+              <ul className="work__stack" aria-label={`${p.name} technology stack`}>
+                {p.techs.map(([id, label]) => (
+                  <li key={id} className="work__tech" title={label}>
+                    <img src={`/tech/${id}.svg`} alt="" width="20" height="20" loading="lazy" decoding="async" />
+                    <span className="sr-only">{label}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+            {p.images?.length > 0 && (
+              <button
+                type="button"
+                className="work__shots"
+                onClick={() => setGallery(p)}
+                aria-haspopup="dialog"
+                aria-label={`View ${p.images.length} screenshots of ${p.name}`}
+              >
+                <svg viewBox="0 0 20 20" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+                  <rect x="2.5" y="4" width="15" height="12" rx="2" />
+                  <path d="M2.5 13l4-4 4 3 3-2.5 4 3.5" />
+                  <circle cx="13.5" cy="7.5" r="1.2" fill="currentColor" stroke="none" />
+                </svg>
+                View {p.images.length} screenshots
+              </button>
+            )}
           </li>
         ))}
       </ul>
@@ -71,6 +99,7 @@ export default function Work({ content: c }) {
       ) : (
         <p className="work__count work__count--done" aria-live="polite">All {items.length} projects shown</p>
       )}
+      {gallery && <ProjectGallery project={gallery} onClose={() => setGallery(null)} />}
     </Section>
   );
 }

@@ -157,9 +157,23 @@ When `#contact` is beneath the floating header, `<html data-surface="contact">` 
 
 ### Work logos
 
-Logos are stored in `public/logos/` and referenced through `logo` properties in `site.work.items`.
-
 Logos are stored in `public/logos/` and referenced through `logo` properties in `site.work.items`. Missing logo files are hidden automatically.
+
+### Project screenshots
+
+Screenshots live in `public/projects/<project>/` as WebP files. Add an `images` array to a `site.work.items` entry, with one `{ src, width, height, alt }` object per screenshot. Width and height reserve the image space before it loads.
+
+Cards with screenshots render a "View N screenshots" button. It opens `src/components/ui/ProjectGallery.jsx`: horizontal main slides, vertical thumbnails on desktop, full-screen viewer on phones, arrow-key and Escape support. Convert screenshots at their native size; the stage fits portrait and wide images with `object-fit: contain`.
+
+### Tech stack icons
+
+Every project has a `techs` array of `[iconName, label]` pairs. The SVGs live in `public/tech/` and come from the `tech-stack-icons` package. Regenerate them with:
+
+```bash
+npm run tech-icons
+```
+
+Add new icon names to `scripts/extract-tech-icons.mjs` and to the project entry. The runtime does not import `tech-stack-icons`: its module ships every icon in one 8 MB file, so only the used SVGs are exported.
 
 ### Pricing configuration
 
@@ -213,7 +227,7 @@ Setting `testimonial: null` hides the testimonial block. Only add a testimonial 
 - `hooks/useReveal.js` and `[data-reveal]` provide staggered scroll reveals through the `--d` variable. The effect is disabled for users who prefer reduced motion.
 - The plan switch uses a sliding thumb.
 - Additional plan options expand with a grid-row transition.
-- Work cards use an animated blue underline and logo-colour changes on hover.
+- Work cards use an animated accent underline, a lift on hover, and a gallery button when screenshots exist.
 - Navigation highlights the section currently in view.
 
 ## Palette (October 2026)

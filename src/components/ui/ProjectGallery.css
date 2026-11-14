@@ -1,0 +1,206 @@
+.pg {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal);
+  display: grid;
+  place-items: center;
+  padding: clamp(12px, 3vw, 32px);
+  background: rgba(21, 19, 15, .82);
+  backdrop-filter: blur(6px);
+}
+
+.pg__dialog {
+  width: min(1080px, 100%);
+  max-height: min(88vh, 820px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--surface);
+  border-radius: 16px;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, .38);
+}
+
+.pg__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+.pg__title {
+  margin: 0;
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
+  font-weight: 500;
+  letter-spacing: -.02em;
+}
+
+.pg__meta {
+  margin: 2px 0 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.pg__head-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.pg__counter {
+  margin: 0;
+  font-size: 14px;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.pg__close {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--bg);
+  color: var(--ink);
+  cursor: pointer;
+  transition: border-color .2s, background .2s;
+}
+.pg__close:hover { border-color: var(--ink); }
+
+.pg__body {
+  display: flex;
+  gap: 12px;
+  min-height: 0;
+  flex: 1;
+  padding: 16px;
+}
+
+.pg__main {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+  min-width: 0;
+}
+
+.pg__stage {
+  position: relative;
+  height: clamp(320px, 60vh, 620px);
+  overflow: hidden;
+  border-radius: 10px;
+  background: var(--ink);
+}
+
+.pg__viewport {
+  height: 100%;
+  overflow: hidden;
+}
+
+.pg__container {
+  display: flex;
+  height: 100%;
+}
+
+.pg__slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 100%;
+  min-width: 0;
+  margin: 0;
+  padding: clamp(8px, 1.5vw, 20px);
+}
+
+.pg__img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+.pg__nav {
+  position: absolute;
+  top: 50%;
+  translate: 0 -50%;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(249, 247, 242, .9);
+  color: var(--ink);
+  cursor: pointer;
+  transition: opacity .2s, background .2s;
+}
+.pg__nav:hover { background: var(--surface); }
+.pg__nav:disabled { opacity: .28; cursor: default; }
+.pg__nav--prev { left: 12px; }
+.pg__nav--next { right: 12px; }
+
+.pg__caption {
+  margin: 0;
+  padding: 0 2px;
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--muted);
+}
+
+.pg__thumbs {
+  flex: 0 0 104px;
+  height: clamp(320px, 60vh, 620px);
+}
+
+.pg__thumbs-viewport {
+  height: 100%;
+  overflow: hidden;
+}
+
+.pg__thumbs-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  height: 100%;
+}
+
+.pg__thumb {
+  flex: 0 0 76px;
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  background: var(--bg);
+  opacity: .55;
+  cursor: pointer;
+  transition: opacity .2s, border-color .2s;
+}
+.pg__thumb img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.pg__thumb:hover { opacity: .85; }
+.pg__thumb.is-active { opacity: 1; border-color: var(--accent); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .pg__dialog { animation: pg-in .22s cubic-bezier(.2, .8, .2, 1); }
+}
+@keyframes pg-in { from { opacity: 0; transform: translateY(12px) scale(.985); } }
+
+@media (max-width: 699px) {
+  .pg { padding: 0; }
+  .pg__dialog { width: 100%; height: 100dvh; max-height: 100dvh; border-radius: 0; }
+  .pg__head { padding: 10px 12px; }
+  .pg__meta { display: none; }
+  .pg__body { padding: 10px; }
+  .pg__thumbs { display: none; }
+  .pg__main { gap: 8px; }
+  .pg__stage { height: auto; flex: 1; }
+  .pg__nav { width: 44px; height: 44px; }
+  .pg__nav--prev { left: 8px; }
+  .pg__nav--next { right: 8px; }
+  .pg__caption { min-height: 34px; }
+}

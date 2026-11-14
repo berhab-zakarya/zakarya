@@ -20,5 +20,6 @@
   --z-lower: 2;
   --z-header: 50;
   --z-menu: 60;
+  --z-modal: 100;
 }
 @media (max-width: 699px) { :root { --header-h: 56px; } }
