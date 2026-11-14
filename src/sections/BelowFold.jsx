@@ -3,6 +3,7 @@ import useReveal from "../hooks/useReveal.js";
 import Work from "./Work/Work.jsx";
 import Services from "./Services/Services.jsx";
 import Pricing from "./Pricing/Pricing.jsx";
+import Testimonials from "./Testimonials/Testimonials.jsx";
 import ContactSection from "./Contact/ContactSection.jsx";
 import { site } from "../content/site.js";
 
@@ -16,6 +17,7 @@ export default function BelowFold() {
       <Services content={site.services} />
       <Pricing content={site.pricing} />
       <About content={site.about} />
+      <Testimonials content={site.testimonials} />
       <ContactSection content={site.contact} />
     </>
   );

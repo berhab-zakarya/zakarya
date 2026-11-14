@@ -153,6 +153,22 @@ The endpoint must be a real, tested service. Do not expose private API credentia
 
 When `#contact` is beneath the floating header, `<html data-surface="contact">` re-themes the header CTA through `SiteHeader.css`.
 
+## Testimonials
+
+The testimonials section reads from Supabase and accepts public submissions.
+
+1. Run `supabase/testimonials.sql` once in the Supabase SQL editor. It creates the table, row-level security policies and the public `avatars` bucket.
+2. Set `VITE_SUPABASE_URL` and `VITE_SUPABASE_PUBLISHABLE_KEY` in `.env`. The publishable key is safe to expose; never use a service role key in the client.
+3. New submissions are stored with `published = false`. Approve one with:
+
+```sql
+update public.testimonials set published = true where id = '<uuid>';
+```
+
+The section shows only published rows. Without the environment variables it renders an empty state and the form explains that it is not connected.
+
+Photos are optional. The browser crops them to a 320px square WebP before uploading, and names without a photo get a coloured initial.
+
 ## Work logos and pricing
 
 ### Work logos
@@ -161,7 +177,9 @@ Logos are stored in `public/logos/` and referenced through `logo` properties in 
 
 ### Project screenshots
 
-Screenshots live in `public/projects/<project>/` as WebP files. Add an `images` array to a `site.work.items` entry, with one `{ src, width, height, alt }` object per screenshot. Width and height reserve the image space before it loads.
+Screenshots live in `public/projects/<project>/` as WebP files. Source screenshots and notes go in the ignored `projects/<project>/` folder; only the generated WebP files and the `images` data are committed.
+
+Add an `images` array to a `site.work.items` entry, with one `{ src, width, height, alt }` object per screenshot. Width and height reserve the image space before it loads.
 
 Cards with screenshots render a "View N screenshots" button. It opens `src/components/ui/ProjectGallery.jsx`: horizontal main slides, vertical thumbnails on desktop, full-screen viewer on phones, arrow-key and Escape support. Convert screenshots at their native size; the stage fits portrait and wide images with `object-fit: contain`.
 

@@ -85,14 +85,14 @@ export default function ProjectGallery({ project, onClose }) {
             <div className="pg__stage">
               <div className="pg__viewport" ref={mainRef}>
                 <div className="pg__container">
-                  {images.map((img, i) => (
+                  {images.map((img) => (
                     <figure className="pg__slide" key={img.src}>
                       <img
                         src={img.src}
                         alt={img.alt}
                         width={img.width}
                         height={img.height}
-                        loading={i === 0 ? "eager" : "lazy"}
+                        loading="eager"
                         decoding="async"
                         className="pg__img"
                       />

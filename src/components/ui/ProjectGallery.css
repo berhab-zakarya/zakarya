@@ -155,7 +155,9 @@
 .pg__thumbs {
   flex: 0 0 104px;
   height: clamp(320px, 60vh, 620px);
+  cursor: grab;
 }
+.pg__thumbs:active { cursor: grabbing; }
 
 .pg__thumbs-viewport {
   height: 100%;
