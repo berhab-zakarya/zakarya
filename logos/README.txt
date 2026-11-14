@@ -1,2 +1,2 @@
 Logo files for the Work section.
-Add algecom.png here (any size; it is shown ~56px tall). Until the file exists the Algecom card shows no logo.
+Each card references its logo through the `logo` property in site.work.items. Any size works; logos render 56px tall. A missing file is hidden automatically, so a card without a logo asset still renders.
