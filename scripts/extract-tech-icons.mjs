@@ -9,9 +9,10 @@ const require = createRequire(import.meta.url);
 const icons = require("tech-stack-icons/icons.json");
 
 const NAMES = [
-  "antd", "dart", "django", "docker", "firebase", "flutter", "gemini",
-  "laravel", "mysql", "nextjs", "nodejs", "postgresql", "python", "react",
-  "redis", "redux", "swagger", "tailwindcss", "tauri", "typescript", "vitejs",
+  "android", "antd", "dart", "django", "docker", "firebase", "flutter",
+  "gemini", "java", "js", "laravel", "mysql", "nextjs", "nodejs",
+  "postgresql", "python", "rabbitmq", "react", "redis", "redux", "sass",
+  "sqlite", "swagger", "tailwindcss", "tauri", "typescript", "vitejs",
 ];
 
 await mkdir("public/tech", { recursive: true });

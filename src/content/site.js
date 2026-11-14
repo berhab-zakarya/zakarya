@@ -28,7 +28,7 @@ export const site = {
     priceLink: { label: "MVPs from 180,000 DZD", note: "See live pricing · students get 20% off", href: "#pricing" },
     proofTitle: "AT A GLANCE",
     proof: [
-      ["12", "Products designed and built"],
+      ["24", "Projects built or in progress"],
       ["1 person", "Design to deployment, no handoffs"],
       ["Fixed price", "Quoted after a free call"],
     ],
@@ -39,7 +39,7 @@ export const site = {
 
   /* ---- Selected work (#work) ---- */
   work: {
-    lead: "Every product below is built and owned end to end: ERPs and point-of-sale systems, e-learning platforms, editorial software, agency tools and mobile apps.",
+    lead: "Projects I built, from live products and client systems to practice builds and prototypes. Screenshots appear where the project has them.",
     items: [
       {
         name: "Mekial",
@@ -56,6 +56,18 @@ export const site = {
         href: "https://medtasty.com",
         text: "Learning platform for a dentistry university. Students work through chapters, lecture video, live sessions and quizzes, while staff manage courses and payments from a Next.js dashboard. Django and MySQL behind it, Flutter app on top.",
         techs: [["django", "Django"], ["nextjs", "Next.js"], ["flutter", "Flutter"], ["mysql", "MySQL"], ["firebase", "Firebase"], ["redis", "Redis"]],
+      },
+      {
+        name: "Algecom",
+        kind: "E-commerce platform · Licence project",
+        text: "Shopify-style store builder for Algerian merchants. Each seller gets an admin for products, orders, invoices, customers and DZD subscriptions, with a setup guide that runs from store name and custom domain to first product, shipping rates and a payment provider.",
+        images: [
+          { src: "/projects/algecom/01-setup.webp", width: 1600, height: 1600, alt: "Store setup guide with steps for shop name, domain, first product and payments" },
+          { src: "/projects/algecom/02-subscribe.webp", width: 1600, height: 1600, alt: "Subscription screen with a 1999 DZD monthly plan and card payment details" },
+          { src: "/projects/algecom/03-dashboard.webp", width: 1600, height: 1600, alt: "Seller dashboard with income, expenses, spending chart and order list" },
+          { src: "/projects/algecom/04-settings.webp", width: 1600, height: 1600, alt: "Account settings with addresses and saved payment methods" },
+          { src: "/projects/algecom/05-cover.webp", width: 1600, height: 1600, alt: "Algecom cover slide for the licence project presentation" },
+        ],
       },
       {
         name: "Datamaster HR",
@@ -131,6 +143,72 @@ export const site = {
           { src: "/projects/kidoso/05-signup.webp", width: 413, height: 867, alt: "New account form with name, email and password fields" },
           { src: "/projects/kidoso/10-quiz.webp", width: 414, height: 866, alt: "Quiz question with four answer choices and a sign-language illustration" },
         ],
+      },
+      {
+        name: "Like4Follow",
+        kind: "Android prototype · Early",
+        text: "Native Android app named Like4Follows. Only the launcher screen exists so far; there is no networking, storage or feature logic yet.",
+        techs: [["android", "Android"], ["java", "Java"]],
+      },
+      {
+        name: "Django blog",
+        kind: "Practice project · Django",
+        text: "Small blog built to practise Django. One Post model with a list and a detail page, served through Django templates and managed from the admin.",
+        techs: [["django", "Django"], ["python", "Python"], ["sqlite", "SQLite"]],
+      },
+      {
+        name: "Django chat",
+        kind: "Practice project · Django",
+        text: "Room-based chat prototype: enter a room name and username, then land in a room page. Room and Message models exist, but there are no WebSockets or stored message history yet.",
+        techs: [["django", "Django"], ["python", "Python"], ["sqlite", "SQLite"]],
+      },
+      {
+        name: "E-commerce store",
+        kind: "E-commerce · Early build",
+        text: "Storefront and admin split across a Laravel API and a React app. So far it has registration, login, Google OAuth and a user list; products and orders are not built.",
+        techs: [["laravel", "Laravel"], ["react", "React"], ["mysql", "MySQL"], ["redux", "Redux"]],
+      },
+      {
+        name: "Management portfolio",
+        kind: "Personal portfolio · Next.js",
+        text: "Single-page portfolio with a bento project grid, an about block and motion effects. Static data, no CMS or backend, built on an early Next.js scaffold.",
+        techs: [["nextjs", "Next.js"], ["react", "React"], ["typescript", "TypeScript"], ["tailwindcss", "Tailwind CSS"]],
+      },
+      {
+        name: "Portfolio CMS",
+        kind: "Personal site · Next.js and Django API",
+        text: "Portfolio site with an admin dashboard for editing the hero, projects, testimonials, companies and work history. Next.js front end, Django API and JWT auth.",
+        techs: [["nextjs", "Next.js"], ["typescript", "TypeScript"], ["react", "React"], ["django", "Django"], ["redux", "Redux"]],
+      },
+      {
+        name: "Portfolio API",
+        kind: "Practice project · Django REST",
+        text: "REST API for a portfolio with account registration, token login, blog posts with tags and an image gallery. The projects app is still empty and the URL prefixes are broken.",
+        techs: [["django", "Django"], ["python", "Python"], ["sqlite", "SQLite"]],
+      },
+      {
+        name: "OCEAN landing",
+        kind: "Static landing page · Next.js",
+        text: "Marketing page for OCEAN, a CRM dashboard concept. Hero, client logos, feature blocks, pricing and testimonials, all from static data. No backend or working navigation.",
+        techs: [["nextjs", "Next.js"], ["react", "React"], ["typescript", "TypeScript"], ["tailwindcss", "Tailwind CSS"]],
+      },
+      {
+        name: "Elshawi Legal",
+        kind: "Legal platform · Early scaffold",
+        text: "Legal practice and library platform planned around Django, Next.js and a Weaviate vector store. The app folders are empty, so only the project structure and admin are in place.",
+        techs: [["django", "Django"], ["nextjs", "Next.js"], ["typescript", "TypeScript"], ["docker", "Docker"]],
+      },
+      {
+        name: "Usiha admin",
+        kind: "Admin backend · Early build",
+        text: "Django admin service for authentication and orchestration: JWT login, OTP password reset, audit middleware and internal HTTP clients. Only the auth app exists; the other declared apps are not implemented.",
+        techs: [["django", "Django"], ["postgresql", "PostgreSQL"], ["redis", "Redis"], ["rabbitmq", "RabbitMQ"]],
+      },
+      {
+        name: "Developer portfolio",
+        kind: "Portfolio template · Next.js",
+        text: "Open-source developer portfolio template by Abu Said, repersonalised with my data. Sections for experience, projects, skills and a contact form with reCAPTCHA.",
+        techs: [["nextjs", "Next.js"], ["tailwindcss", "Tailwind CSS"], ["sass", "Sass"], ["js", "JavaScript"]],
       },
     ],
   },
