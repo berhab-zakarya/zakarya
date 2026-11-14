@@ -12,10 +12,10 @@ export const site = {
   contactHref: "#contact", // swap for a real route or mailto:
   nav: [
     { label: "Work", href: "#work" },
+    { label: "Testimonials", href: "#testimonials" },
     { label: "Services", href: "#services" },
     { label: "Pricing", href: "#pricing" },
     { label: "About", href: "#about" },
-    { label: "Testimonials", href: "#testimonials" },
     { label: "Contact", href: "#contact" },
   ],
   hero: {

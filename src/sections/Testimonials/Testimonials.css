@@ -1,6 +1,7 @@
 .tm {
   padding: clamp(72px, 9vw, 128px) var(--m);
   background: var(--surface);
+  border-block: 1px solid var(--line);
   overflow: hidden;
   scroll-margin-top: calc(var(--header-h) + 24px);
 }

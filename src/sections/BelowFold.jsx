@@ -14,10 +14,10 @@ export default function BelowFold() {
   return (
     <>
       <Work content={site.work} />
+      <Testimonials content={site.testimonials} />
       <Services content={site.services} />
       <Pricing content={site.pricing} />
       <About content={site.about} />
-      <Testimonials content={site.testimonials} />
       <ContactSection content={site.contact} />
     </>
   );
