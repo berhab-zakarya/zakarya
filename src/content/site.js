@@ -28,47 +28,89 @@ export const site = {
     priceLink: { label: "MVPs from 180,000 DZD", note: "See live pricing · students get 20% off", href: "#pricing" },
     proofTitle: "AT A GLANCE",
     proof: [
-      ["5", "Products designed, built and shipped"],
+      ["12", "Products designed and built"],
       ["1 person", "Design to deployment, no handoffs"],
       ["Fixed price", "Quoted after a free call"],
     ],
     logosTitle: "Selected projects",
     logosCopy: "Systems and products I've built for myself and for clients.",
-    logos: [["Mekial", "w1"], ["Algecom", "w2"], ["DataMaster", "w3"]],
+    logos: [["Mekial", "w1"], ["Medtasty", "w2"], ["DataMaster", "w3"], ["StudX", "w4"]],
   },
 
   /* ---- Selected work (#work) ---- */
   work: {
-    lead: "Products I designed, built and shipped: business systems, an e-commerce platform and a mobile app.",
+    lead: "Every product below is built and owned end to end: ERPs and point-of-sale systems, e-learning platforms, editorial software, agency tools and mobile apps.",
     items: [
       {
         name: "Mekial",
-        kind: "ERP system · My company",
-        logo: "/logos/mekial.png", // files live in /public/logos
+        kind: "ERP and POS · My company",
+        logo: "/logos/mekial.png",
         href: "https://mekial.app",
-        text: "My own company and product: a full ERP platform that brings products, inventory and day-to-day operations into one place, live today as a SaaS.",
+        text: "My own product: a multi-branch ERP and point-of-sale for shops in Algeria. Stock, purchases, invoicing, payroll and reports in one system, sold as a subscription and running live at mekial.app.",
       },
       {
-        name: "Algecom",
-        kind: "Multi-vendor e-commerce platform",
-        logo: "/logos/algecom.png", // add this file by hand; the card simply hides the logo until it exists
-        text: "A Shopify-style platform where merchants launch and run their own online stores, with multi-vendor support, catalogue and order management on one shared platform.",
+        name: "Medtasty",
+        kind: "University e-learning platform",
+        logo: "/logos/medtasty.png",
+        href: "https://medtasty.com",
+        text: "A learning platform for a dentistry university: courses, chapters, lecture video, live sessions, quizzes and payments. Django and MySQL API, a Next.js admin dashboard and a Flutter student app.",
       },
       {
-        name: "DataMaster",
-        kind: "HR system · Built for a company",
+        name: "Datamaster HR",
+        kind: "HR platform · Built for Datamaster",
         logo: "/logos/datamaster.svg",
-        text: "A custom HR platform built for DataMaster: departments, positions and employee records managed in one clear, role-based workspace.",
+        text: "HR and project management for Datamaster: employees, contracts, leave, attendance, payroll, projects and timesheets. A Django API with a React admin app and a Flutter mobile app.",
       },
       {
         name: "Document management",
-        kind: "Business system",
-        text: "A document management system to store, organise and find company documents quickly, with access kept under control.",
+        kind: "Document system · Built for Datamaster",
+        text: "Document management for Datamaster: folders, sharing, signature requests, an audit log and a notification feed. Django and PostgreSQL API with a React front end.",
       },
       {
-        name: "Startup mobile app",
-        kind: "Mobile · MVP",
-        text: "A mobile app built end to end for a startup, taking the idea from first prototype to a product ready for real users.",
+        name: "Retail ERP",
+        kind: "Retail ERP · Built for Datamaster",
+        logo: "/logos/datamaster-retail.png",
+        text: "A retail ERP used in stores: point of sale, stock counts, purchasing and sales reports. One Django API behind three Flutter clients for sales agents, store staff and inventory counting.",
+      },
+      {
+        name: "Journal platform",
+        kind: "Editorial platform · Scientific journal",
+        text: "A peer-review platform for a scientific journal: submissions, reviewer assignment, two-stage editorial decisions and a public catalogue. Laravel API with role-based permissions and a React front end.",
+      },
+      {
+        name: "StudX PTM",
+        kind: "Agency site and console",
+        logo: "/logos/studx.svg",
+        href: "https://studxptm.com",
+        text: "The public site for the StudX PTM agency and the private console behind it: missions, project revenue, payments, staff accounts and an email client. Next.js front end on a Django REST API.",
+      },
+      {
+        name: "StudX Store",
+        kind: "Template storefront · StudX",
+        logo: "/logos/studx-store.svg",
+        text: "A storefront for website templates and mobile products: catalogue filters, product pages, cart and wishlist. Next.js and Redux Toolkit, built for the StudX marketplace.",
+      },
+      {
+        name: "Ibn Khamis Services",
+        kind: "Services app · Built for Ibn Khamis",
+        text: "A services app for an Algerian office: customers apply for tests, download files, follow news and book appointments. Flutter with Firebase authentication, Firestore and push notifications, plus an admin panel.",
+      },
+      {
+        name: "Otor ERP",
+        kind: "HR dashboard · In progress",
+        logo: "/logos/otor.svg",
+        text: "An HR and operations dashboard in progress: staff records, dashboard charts and a module map for payroll, memos, inventory and procurement. Next.js front end with charts and a staff directory.",
+      },
+      {
+        name: "StudX Club",
+        kind: "Club platform · StudX",
+        text: "The backend for a university student club: membership sign-up, member profiles, points, generated letters and bulk email. Django REST API with JWT auth, PostgreSQL and Swagger documentation.",
+      },
+      {
+        name: "Kidoso",
+        kind: "Mobile learning app",
+        logo: "/logos/kidoso.png",
+        text: "An Arabic learning app for children aged 7 to 12: graded reading and writing exercises, assessments, an admin dashboard and an AI tutor. Flutter and Firebase, with Gemini generating questions and exercises.",
       },
     ],
   },
@@ -149,7 +191,7 @@ export const site = {
     bookingLead: "Prefer a quick conversation?",
     bookingLabel: "Book a call",
     logosTitle: "Selected projects",
-    logos: [["Mekial", "w1"], ["Algecom", "w2"], ["DataMaster", "w3"]],
+    logos: [["Mekial", "w1"], ["Medtasty", "w2"], ["DataMaster", "w3"]],
     testimonial: null, // { quote, author, role }: renders only when you add a real one
     form: {
       title: "Tell me about your project.",
@@ -173,7 +215,7 @@ export const site = {
     title: "About",
     text: [
       "I'm Zakarya, an independent full-stack developer. I work alone, so you talk to the person who writes the code.",
-      "I run Mekial, my own ERP sold as a SaaS, and I've built a multi-vendor e-commerce platform, an HR system and a startup's mobile app. I'd rather scope a small MVP properly than sell you a big build you don't need yet.",
+      "I run Mekial, my own ERP sold as a SaaS, and I've built a university e-learning platform, retail and HR systems for Datamaster, and an editorial platform for a scientific journal. I'd rather scope a small MVP properly than sell you a big build you don't need yet.",
     ],
     stepsTitle: "How it works",
     steps: [

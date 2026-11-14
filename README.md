@@ -159,7 +159,7 @@ When `#contact` is beneath the floating header, `<html data-surface="contact">` 
 
 Logos are stored in `public/logos/` and referenced through `logo` properties in `site.work.items`.
 
-Add `algecom.png` manually when the asset is available. Missing logo files are hidden automatically.
+Logos are stored in `public/logos/` and referenced through `logo` properties in `site.work.items`. Missing logo files are hidden automatically.
 
 ### Pricing configuration
 
